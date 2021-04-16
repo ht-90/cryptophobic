@@ -1,0 +1,6 @@
+# web framework
+django
+djangorestframework
+
+# config
+python-dotenv
