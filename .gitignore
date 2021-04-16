@@ -130,3 +130,6 @@ dmypy.json
 
 # examples
 .examples
+
+# ide
+.vscode
