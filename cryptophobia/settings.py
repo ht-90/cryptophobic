@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +21,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+
+# Load config file
+CRYPTOPHOBIC_ENV = os.getenv("CRYPTOPHOBIC_ENV")
+
+if CRYPTOPHOBIC_ENV == "PRODUCTION":
+    dotenv_file = os.path.join(BASE_DIR, ".envs/production")
+elif CRYPTOPHOBIC_ENV == "DEVELOPMENT":
+    dotenv_file = os.path.join(BASE_DIR, ".envs/development")
+else:
+    raise KeyError("No valid CRYPTOPHOBIC_ENV environmental variable not provided")
+
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG_MODE = os.getenv("DEBUG_MODE")
+
+if DEBUG_MODE == "TRUE":
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = []
 
