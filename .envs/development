@@ -4,3 +4,4 @@
 # Django
 # --------------------------------------------------
 SECRET_KEY=django-insecure-oe5!!mz11mc7#g-&l3bh9fqb()=zb@c748^!i%5j0og=f=a#ey
+DEBUG_MODE=TRUE
