@@ -1,1 +1,4 @@
 -r base.txt
+
+# linter and tests
+tox
