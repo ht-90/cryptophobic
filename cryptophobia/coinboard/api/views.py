@@ -8,5 +8,3 @@ class CoinList(generics.ListCreateAPIView):
     queryset = Coin.objects.all()
     serializer_class = CoinSerializer
 
-
-# Create your views here.
