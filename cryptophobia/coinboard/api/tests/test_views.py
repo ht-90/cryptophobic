@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 
-from ..models import Coin
+from ...models import Coin
 
 
 class TestCoinList(TestCase):
