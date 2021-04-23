@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from .models import Coin
+from ..models import Coin
 from .serializers import CoinSerializer
 
 

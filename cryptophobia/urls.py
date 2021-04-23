@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from .coinboard.views import CoinList
+from .coinboard.api.views import CoinList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
