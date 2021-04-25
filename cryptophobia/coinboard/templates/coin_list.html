@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+  <table class="table is-striped">
+    <tr>
+      <th>Coin</th>
+      <th>Ticker</th>
+      <th>Address</th>
+    </tr>
+    {% for coin in coin_list %}
+    <tr>
+      <td>{{ coin.name }}</td>
+      <td>{{ coin.ticker }}</td>
+      <td>{{ coin.address }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
